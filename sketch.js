@@ -20,11 +20,11 @@ function setup() {
 	world = engine.world; 
 
 	var ground_options ={
-		isStatic: true
+		isStatic:true
 	  };
 	 
    
-	 ground = Bodies.rectangle(299,711,1000,10,ground_options);
+	 ground = Bodies.rectangle(300,711,1000,10,ground_options);
 	 World.add(world,ground);
 	
 	var ball_options = {
@@ -39,20 +39,20 @@ function setup() {
 		frictionAir:0.1
 	}
 
-	//var ground2_options = {
-		//resititution :0.1,
-		//friction:1,
-		//frictionAir:0.3
-	//}
+	var ground2_options = {
+		resititution :0.3,
+		friction:1,
+		frictionAir:4.3
+	}
 	
-	ball = Bodies.circle(220,10,10,ball_options);
+	ball = Bodies.circle(270,10,10,ball_options);
 	World.add(world,ball);
 
-    ground1 = Bodies.rect(110,50,10,10);
+    ground1 = Bodies.rectangle(150,50,10,10);
 	 World.add(world,ground1);
 
-	// block3 = Bodies.rectangle(350,50,10,10);
-	// World.add(world,block3);
+	 ground2 = Bodies.rectangle(500,50,10,10);
+	 World.add(world,ground2);
 
 	rectMode(CENTER)
 	ellipseMode(RADIUS)
@@ -68,7 +68,8 @@ function draw() {
 	Engine.update(engine)
 
 	ellipse(ball.position.x,ball.position.y,20);
-	rect(ground.position.x,ground.position.y,1000,20);	 
+	rect(ground1.position.x,ground1.position.y,54,54);
+	rect(ground2.position.x,ground2.position.y,130,54)
 }
 
 
